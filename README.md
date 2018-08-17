@@ -1,4 +1,5 @@
-# ResNet-50
+# resnet-50
+
 Integration of ResNet-50 (in ONNX format) into modelhub.ai
 
 This integration is based on release 1.1 from https://github.com/onnx/models/tree/master/resnet50.
