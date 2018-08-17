@@ -1,8 +1,9 @@
 {
-  "docker_id": "modelhub/main_caffe2:0.3.0",
+  "docker_id": "modelhub/caffe2-modelhub:1.0.0",
   "external_contrib_files": [
     {
-      "src_url": "https://www.dropbox.com/s/rn769w3etxtigw9/model.onnx?dl=1",
+      "src_url":
+        "https://github.com/modelhub-ai/resnet-50/releases/download/v1.0/model.onnx",
       "dest_file_path": "/contrib_src/model/model.onnx"
     }
   ]
