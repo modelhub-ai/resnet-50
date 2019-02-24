@@ -1,5 +1,7 @@
 # resnet-50
 
+This repository hosts the contributor source files for the resnet-50 model. ModelHub integrates these files into an engine and controlled runtime environment. A unified API allows for out-of-the-box reproducible implementations of published models. For more information, please visit [www.modelhub.ai](http://modelhub.ai/) or contact us [info@modelhub.ai](mailto:info@modelhub.ai).
+
 ## meta
 
 |                  |                                                 |
@@ -32,12 +34,12 @@
 | learning_type | Supervised learning                                                                   |
 | format        | .onnx                                                                                 |
 | I/O           | model I/O can be viewed [here](contrib_src/model/config.json)                         |
-| license       | model licence can be viewed [here](contrib_src/license/model)                         |
+| license       | model license can be viewed [here](contrib_src/license/model)                         |
 
 ## run
 
-To run this model and view others in the collection, view the instructions on [modelhub](http://app.modelhub.ai/).
+To run this model and view others in the collection, view the instructions on [ModelHub](http://app.modelhub.ai/).
 
 ## contribute
 
-To contribute models, visit the [modelhub docs](https://modelhub.readthedocs.io/en/latest/).
+To contribute models, visit the [ModelHub docs](https://modelhub.readthedocs.io/en/latest/).
