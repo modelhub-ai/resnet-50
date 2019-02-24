@@ -1,6 +1,6 @@
 # resnet-50
 
-## meta data
+## meta
 
 |                  |                                                 |
 | ---------------- | ----------------------------------------------- |
@@ -31,9 +31,13 @@
 | architecture  | Convolutional Neural Network (CNN)                                                    |
 | learning_type | Supervised learning                                                                   |
 | format        | .onnx                                                                                 |
-| license       | model licence can be viewed here: contrib_src/license/model                           |
+| I/O           | model I/O can be viewed [here](contrib_src/model/config.json)                         |
+| license       | model licence can be viewed [here](contrib_src/license/model)                         |
 
 ## run
 
 To run this model and view others in the collection, view the instructions on [modelhub](http://app.modelhub.ai/).
+
+## contribute
+
 To contribute models, visit the [modelhub docs](https://modelhub.readthedocs.io/en/latest/).
