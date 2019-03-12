@@ -31,6 +31,7 @@ This repository hosts the contributor source files for the resnet-50 model. Mode
 |               |                                                                                       |
 | ------------- | ------------------------------------------------------------------------------------- |
 | description   | ResNet-50 is a 50 layer Residual deep convolutional network for image classification. |
+| provenance    | https://github.com/onnx/models/tree/master/resnet50 |
 | architecture  | Convolutional Neural Network (CNN)                                                    |
 | learning_type | Supervised learning                                                                   |
 | format        | .onnx                                                                                 |
