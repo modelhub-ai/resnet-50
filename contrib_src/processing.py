@@ -15,8 +15,8 @@ class ImageProcessor(ImageProcessorBase):
             referenceImage = SimpleITK.Image(newSize, image.GetPixelIDValue())
             referenceImage.SetOrigin(image.GetOrigin())
             referenceImage.SetDirection(image.GetDirection())
-            referenceImage.SetSpacing([sz*spc/nsz for nsz,sz,spc in zip(newSize, 
-                                                                        image.GetSize(), 
+            referenceImage.SetSpacing([sz*spc/nsz for nsz,sz,spc in zip(newSize,
+                                                                        image.GetSize(),
                                                                         image.GetSpacing())])
             image = SimpleITK.Resample(image, referenceImage)
         else:
@@ -30,7 +30,9 @@ class ImageProcessor(ImageProcessorBase):
             npArr = npArr[:,[0],:,:]
             npArr = np.concatenate((npArr, npArr[:,[0],:,:]), axis = 1)
             npArr = np.concatenate((npArr, npArr[:,[0],:,:]), axis = 1)
-        npArr = (npArr - 127.5) / 127.5
+        npArr = npArr.reshape(3, 224, 224)
+        npArr = self._preprocess(npArr)
+        npArr = npArr.reshape(1, 3, 224, 224)
         return npArr
 
     def computeOutput(self, inferenceResults):
@@ -43,3 +45,12 @@ class ImageProcessor(ImageProcessorBase):
                     'probability': float(probs[i])}
             result.append(obj)
         return result
+
+    def _preprocess(self, img_data):
+        mean_vec = np.array([0.485, 0.456, 0.406])
+        stddev_vec = np.array([0.229, 0.224, 0.225])
+        norm_img_data = np.zeros(img_data.shape).astype('float32')
+        for i in range(img_data.shape[0]):
+             # for each pixel in each channel, divide the value by 255 to get value between [0, 1] and then normalize
+            norm_img_data[i,:,:] = (img_data[i,:,:]/255 - mean_vec[i]) / stddev_vec[i]
+        return norm_img_data
