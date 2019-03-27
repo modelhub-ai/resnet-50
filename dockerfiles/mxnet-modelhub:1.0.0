@@ -1,5 +1,5 @@
-# Use our Caffe2 base image as parent
-FROM modelhub/caffe2:1.0.0
+# Use your environment image as base image
+FROM modelhub/mxnet:1.0.0
 
 RUN apt-get update && apt-get install -y libmagic1
 
@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y libmagic1
 RUN pip install Flask==0.12.2 \
     flask-cors==3.0.6 \
     Redis==2.10.6 \
-    onnx==1.1.1 \
     Pillow==5.1.0 \
     SimpleITK==1.1.0 \
     jupyter==1.0.0 \
